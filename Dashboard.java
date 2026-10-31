@@ -1,6 +1,5 @@
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Dashboard {
 
@@ -17,6 +16,7 @@ public class Dashboard {
             if (widgets.get(i).getEstado()) {
                 activos.add(widgets.get(i));
             }
+
         }
 
         return activos;
@@ -34,11 +34,7 @@ public class Dashboard {
 
     public ArrayList<Widgets> ordenarPorConsumo(){
         ArrayList<Widgets> ordenados = new ArrayList<>(widgets);
-
-        ordenados.sort((primero, segundo) ->
-            Float.compare(primero.getConsumoKB(), segundo.getConsumoKB())
-        );
-
+        Collections.sort(ordenados);
         return ordenados;
     }
 
